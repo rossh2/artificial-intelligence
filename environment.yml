@@ -1,0 +1,9 @@
+name: artificial-intelligence
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10.9
+  - conda-forge::datasets
+  - scikit-learn
+  - pandas
