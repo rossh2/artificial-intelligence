@@ -55,6 +55,11 @@ listed in `environment.yml`.
 This script is designed to be run using multiple processes to speed up performance, for example on a CPU cluster.
 (Using 8 CPUs, it will still take well over 24h to count all the bigrams used in these experiments.)
 
+Example usage:
+```shell
+python filtering_experiment/check_c4_bigram_frequency.py --processors 8 --chunk_size 1024 --doc_limit 365000000 --doc_group_size 200 --save_interval 100 --download --adjectives bigrams/adjectives.txt --nouns bigrams/all_nouns.txt --out_dir output/counts/
+```
+
 ## Qualtrics survey generation scripts
 
 In addition to the bigrams and results, we also share the scripts we used to programmatically generate Qualtrics
