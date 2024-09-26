@@ -57,7 +57,7 @@ This script is designed to be run using multiple processes to speed up performan
 
 Example usage:
 ```shell
-python filtering_experiment/check_c4_bigram_frequency.py --processors 8 --chunk_size 1024 --doc_limit 365000000 --doc_group_size 200 --save_interval 100 --download --adjectives bigrams/adjectives.txt --nouns bigrams/all_nouns.txt --out_dir output/counts/
+python src/frequencies/check_c4_bigram_frequency.py --processors 8 --chunk_size 1024 --doc_limit 365000000 --doc_group_size 200 --save_interval 100 --download --adjectives bigrams/adjectives.txt --nouns bigrams/all_nouns.txt --out_dir output/counts/
 ```
 
 ## Qualtrics survey generation scripts
