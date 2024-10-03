@@ -78,7 +78,7 @@ in the meantime, you can view it on [LingBuzz](https://lingbuzz.net/lingbuzz/008
 @article{ross2024fake,
 	title = {Fake reefs are sometimes reefs and sometimes not, but are always compositional},
 	author = {Ross, Hayley and Kim, Najoung and Davidson, Kathryn},
-	journaltitle = {Experiments in Linguistic Meaning},
+	journal = {Experiments in Linguistic Meaning},
 	volume = {3},
 	date = {2024},
 }
