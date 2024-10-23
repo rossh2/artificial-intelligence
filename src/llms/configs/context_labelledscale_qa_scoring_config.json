@@ -1,0 +1,17 @@
+{
+  "config_nickname": "context-labelledscale-qa",
+  "question_format_string": "Context: {context}\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, {verb} the {bigram} still {noun_det}{noun}?",
+  "responses": [
+    "Definitely not",
+    "Probably not",
+    "Unsure",
+    "Probably yes",
+    "Definitely yes"
+  ],
+  "response_separator": " ",
+  "prompt_instruction_prefix": "",
+  "prompt_instruction_suffix": "\nAnswer:",
+  "few_shot_prompts": [],
+  "few_shot_answers": [],
+  "few_shot_sep": "\n\n"
+}

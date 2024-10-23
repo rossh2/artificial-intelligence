@@ -1,0 +1,29 @@
+{
+  "config_nickname": "isa-labelledscale-5shot",
+  "question_format_string": "{verb} {bigram_det}{bigram} still {noun_det}{noun}?",
+  "responses": [
+    "Definitely not",
+    "Probably not",
+    "Unsure",
+    "Probably yes",
+    "Definitely yes"
+  ],
+  "response_separator": " ",
+  "prompt_instruction_prefix": "On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", ",
+  "prompt_instruction_suffix": "",
+  "few_shot_prompts": [
+    "is a green pepper still a pepper?",
+    "is a wooden pear still edible?",
+    "is a small ladder still useful?",
+    "is melted ice still ice?",
+    "is a short basketball player still tall?"
+  ],
+  "few_shot_answers": [
+    "Definitely yes",
+    "Definitely not",
+    "Unsure",
+    "Probably not",
+    "Probably yes"
+  ],
+  "few_shot_sep": "\n\n"
+}

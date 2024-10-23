@@ -1,0 +1,29 @@
+{
+  "config_nickname": "context-labelledscale-5shot",
+  "question_format_string": "Context: {context}\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, {verb} the {bigram} still {noun_det}{noun}?",
+  "responses": [
+    "Definitely not",
+    "Probably not",
+    "Unsure",
+    "Probably yes",
+    "Definitely yes"
+  ],
+  "response_separator": " ",
+  "prompt_instruction_prefix": "",
+  "prompt_instruction_suffix": "",
+  "few_shot_prompts": [
+    "Context: Sarah asks Leo to go to the store to buy a bell pepper. When he gets there, he realizes she didn't say which color pepper he should buy. He buys a green pepper. When he gets home, Sarah is disappointed, because she prefers the red ones.\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, is the green pepper still a pepper?",
+    "Context: Mark is an expert carver and carves a highly realistic pear out of dark colored wood. He hides the wooden pear in his fruit bowl among the fruit he bought from the supermarket.\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, is the wooden pear still edible?",
+    "Context: Bob has climbing roses growing all up the side of his house, and wants to trim them for the first time. He needs to find a way to reach the roses higher up. He looks in his shed to see what he has and finds that he has a small ladder, which he can use to reach the roses halfway up the house, though not the ones at the very top.\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, is the small ladder still useful?",
+    "Context: Sam asks Carla to go to the store to buy ice for drinks for their party. Unfortunately, she leaves it in her car all day and comes back in the evening to find that it has all melted. Carla doesn't know what to say to Sam about the melted ice, which he was planning to use in their cocktails.\nQuestion: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, is the melted ice still ice?",
+    "Context: Jordan's friend is on the high school basketball team, and is the tallest among her friends. At the match, Jordan notices that her friend is actually a short basketball player, as most of the other players are taller than her.\n Question: On a scale of \"Definitely not\", \"Probably not\", \"Unsure\", \"Probably yes\" or \"Definitely yes\", in this context, is the short basketball player still tall?"
+  ],
+  "few_shot_answers": [
+    "Definitely yes",
+    "Definitely not",
+    "Unsure",
+    "Probably not",
+    "Probably yes"
+  ],
+  "few_shot_sep": "\n\n"
+}
