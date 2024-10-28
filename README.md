@@ -231,8 +231,8 @@ the `ordinal` package to fit the ordinal regressions.
 
 ## Papers
 
-If you use this work, please cite our papers! Both papers are currently accepted and pending publication; 
-in the meantime, you can view the first on [LingBuzz](https://lingbuzz.net/lingbuzz/008012) and the second on arXiv (link coming soon).
+If you use this work, please cite our papers! Both papers are currently accepted and pending publication. 
+In the meantime, you can view the first on [LingBuzz](https://lingbuzz.net/lingbuzz/008012) and the second on [arXiv](https://arxiv.org/abs/2410.17482).
 
 ```bibtex
 @article{ross2024fake,
@@ -247,10 +247,10 @@ in the meantime, you can view the first on [LingBuzz](https://lingbuzz.net/lingb
       title={Is artificial intelligence still intelligence? LLMs generalize to novel adjective-noun pairs, but don't mimic the full human distribution}, 
       author={Ross, Hayley and Davidson, Kathryn and Kim, Najoung},
       year={2024},
-      eprint={comingsoon},
+      eprint={2410.17482},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      url={comingsoon}, 
+      url={https://arxiv.org/abs/2410.17482}, 
 }
 
 ```
