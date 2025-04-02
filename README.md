@@ -1,13 +1,20 @@
 # Is artificial intelligence still intelligence?
 
 This repository contains the data and some scripts for human and LLM experiments on privative adjectives, 
-such as "Is artificial intelligence still intelligence?"
+such as "Is artificial intelligence still intelligence?". It covers three consecutive papers:
 
-The first part of this work (results of experiments with humans) was presented at ELM 2024 under the title 
-"_Fake reefs_ are sometimes _reefs_ and sometimes not, but are always compositional".
-The second part of this work (results of experiments with LLMs) will be presented at GenBench 2024 under the title
-"Is artificial intelligence still intelligence? 
-LLMs generalize to novel adjective-noun pairs, but don’t mimic the full human distribution"
+- [_Fake reefs_ are sometimes _reefs_ and sometimes not, but are always compositional](https://journals.linguisticsociety.org/proceedings/index.php/ELM/article/view/5813) (ELM 2024)  
+  Three experiments to gather human judgements on privativity inferences for nearly 800 familiar and novel adjective-noun bigrams, plus another 28 bigrams with 2 contexts each biasing the associated inference.
+  We find that humans can generalize to novel bigrams and that privativity inferences are sensitive to context as well as to the choice of noun and adjective.
+- [Is artificial intelligence still intelligence? 
+LLMs generalize to novel adjective-noun pairs, but don’t mimic the full human distribution](https://aclanthology.org/2024.genbench-1.9/) (GenBench 2024)  
+  Three experiments with LLMs to determine whether LLMs can produce human-like inferences on familiar and novel adjective-noun bigrams, with and without a provided context.
+  We find that LLMs produce very similar inferences when a context is provided, are moderately human-like when no context is provided, and are able to generalize equally well to novel bigrams.
+- [Is analogy enough to draw novel adjective-noun inferences?](https://arxiv.org/abs/2503.24293) (submitted to SCiL 2025)  
+  Computational model of analogy, plus a human experiment involving analogical reasoning, to test whether generalization can be achieved by analogy instead of using composition on the adjective-noun bigram.
+  We find that analogy is not sufficient to capture the whole dataset.
+
+The repository currently contains the code and data for the first two papers. Code for the third paper will be uploaded soon.
 
 ## Accessing the data
 
@@ -231,26 +238,44 @@ the `ordinal` package to fit the ordinal regressions.
 
 ## Papers
 
-If you use this work, please cite our papers! Both papers are currently accepted and pending publication. 
-In the meantime, you can view the first on [LingBuzz](https://lingbuzz.net/lingbuzz/008012) and the second on [arXiv](https://arxiv.org/abs/2410.17482).
+If you use this work, please cite our papers! The first two papers are published at [ELM](https://journals.linguisticsociety.org/proceedings/index.php/ELM/article/view/5813) 
+and [GenBench](https://aclanthology.org/2024.genbench-1.9/) respectively; the third is submitted to SCiL 2025. 
+In the meantime, you can view it on [arXiv](https://arxiv.org/abs/2503.24293).
 
 ```bibtex
-@article{ross2024fake,
+@article{ross2025fake,
 	title = {Fake reefs are sometimes reefs and sometimes not, but are always compositional},
 	author = {Ross, Hayley and Kim, Najoung and Davidson, Kathryn},
 	journal = {Experiments in Linguistic Meaning},
+	year = {2025},
 	volume = {3},
-	year = {2024},
+	pages = {332--343},
+	url = {https://journals.linguisticsociety.org/proceedings/index.php/ELM/article/view/5813},
+	doi = {10.3765/elm.3.5813},
 }
 
-@misc{ross2024artificial,
-      title={Is artificial intelligence still intelligence? LLMs generalize to novel adjective-noun pairs, but don't mimic the full human distribution}, 
-      author={Ross, Hayley and Davidson, Kathryn and Kim, Najoung},
-      year={2024},
-      eprint={2410.17482},
+@inproceedings{ross2024artificial,
+	title = {Is artificial intelligence still intelligence? {LLMs} generalize to novel adjective-noun pairs, but don`t mimic the full human distribution},
+	shorttitle = {Is artificial intelligence still intelligence?},
+	author = {Ross, Hayley and Davidson, Kathryn and Kim, Najoung},
+	editor = {Hupkes, Dieuwke and Dankers, Verna and Batsuren, Khuyagbaatar and Kazemnejad, Amirhossein and Christodoulopoulos, Christos and Giulianelli, Mario and Cotterell, Ryan},
+	booktitle = {Proceedings of the 2nd {GenBench} {Workshop} on {Generalisation} ({Benchmarking}) in {NLP}},
+	year = {2024},
+	publisher = {Association for Computational Linguistics},
+	address = {Miami, Florida, USA},
+	pages = {131--153},
+	url = {https://aclanthology.org/2024.genbench-1.9/},
+	doi = {10.18653/v1/2024.genbench-1.9},
+}
+
+@misc{ross2025analogy,
+      title={Is analogy enough to draw novel adjective-noun inferences?}, 
+      author = {Ross, Hayley and Davidson, Kathryn and Kim, Najoung},
+      year={2025},
+      eprint={2503.24293},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.17482}, 
+      url={https://arxiv.org/abs/2503.24293}, 
 }
 
 ```
