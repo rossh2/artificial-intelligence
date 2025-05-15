@@ -52,7 +52,9 @@ The full set of nouns used for corpus counting and to calculate the (relative) f
 - The bigrams and biased contexts used in Experiment 3 ("In this setting, is the AN an N?") are located in `adjective_contexts.csv`.
 - The other files in `bigrams` are used for Qualtrics survey generation.
 
-The `results` directory contains results for the C4 corpus frequency counting script and for the three experiments.
+The `results` directory contains results for the C4 corpus frequency counting script, 
+for the three human judgment experiments in the first paper and for the human analogy experiment ("Experiment 8") 
+in the third paper.
 
 The `surveys` directory contains the output of the Qualtrics survey generation scripts for Experiment 1 and Experiment 2 (see below),
 which can be imported into Qualtrics, as well as exports in QSF format of Experiment 3.
@@ -215,7 +217,7 @@ This step can be run over all the generated contexts at once in about 18-20h on 
 
 ```shell
 hf_access_token=$(cat ~/hf_access_token.txt)
-python lm_isa_experiment/score_isa.py \
+python src/llms/score_isa.py \
   --bigrams output/lm_context_data/generations.csv \
   --context \
   --scorer_config src/llms/configs/context_labelledscale_5shot_scoring_config.json \
@@ -231,14 +233,60 @@ python lm_isa_experiment/score_isa.py \
 ### Analysis and Jensen-Shannon divergence
 
 The R code used to process the LLM experiment results, run the statistics, and calculate the 
-Jensen-Shannon divergence will be uploaded at a later date, and can be requested from the first paper author 
-in the meantime. The regression formulas are given in the paper.
+Jensen-Shannon divergence can be requested from the first paper author, and may be uploaded at a later date. 
+The regression formulas are given in the paper.
 We use the `philentropy` package in R to calculate the Jensen-Shannon divergence and 
 the `ordinal` package to fit the ordinal regressions.
 
+## Code for analogy paper
+
+### Analogy model
+
+Before running the analogy model, you will need to 
+[download the 6B 300D GloVe embeddings](https://nlp.stanford.edu/projects/glove/) and save them at 
+`data/glove/glove.6B.300d.txt`, or modify the path constant in `src/analogy/glove.py`. 
+
+You can then run the analogy model using the following command:
+
+```shell
+python src/analogy/analogy_model.py \
+  --bigram_rating_path results/human/exp2_isa/isa_data_combined.csv \
+  --analogy_bigram_rating_path results/human/exp8_analogy/human_analogy_bigrams.csv \
+  --adjective_class_path bigrams/adjective_classes.csv \
+  --log_out_dir output/analogy
+```
+
+All of the configuration parameters discussed in the paper (as well as a few others) can be passed as arguments to
+`analogy_model.py`; see the `argparse` setup for details.
+
+To run with Llama embeddings, you will first need to generate them (type `initial` or type `final`, respectively):
+
+```shell
+hf_access_token=$(cat ~/hf_access_token.txt)
+python src/analogy/llama_embeddings.py \
+  --model_name "meta-llama/Meta-Llama-3-70B-Instruct" \ 
+  --embedding_type initial \
+  --round_digits 8 \
+  --batch_size 8 \
+  --hf_access_token $hf_access_token \
+  --main_bigram_path bigrams/experiment_bigrams.txt
+  --additional_bigram_path results/exp8_analogy/human_analogy_bigrams.csv
+```
+
+If you pass an output directory other than `output/analogy`, you will need to adjust the file paths at the top of 
+the `LlamaEmbeddings` class accordingly.
+
+### Human experiment analysis
+
+The R code used to process the analogical reasoning experiment for humans and the R code used to 
+measure the fit between the analogy model outputs and the original human data can each be requested 
+from the first paper author. It may be uploaded here at a later date. The regression formulas are given in the paper and
+the (cleaned) participant responses are located at `results/exp8_analogy/analogy_prompting_responses_cleaned.csv`.
+
 ## Papers
 
-If you use this work, please cite our papers! The first two papers are published at [ELM](https://journals.linguisticsociety.org/proceedings/index.php/ELM/article/view/5813) 
+If you use this work, please cite our papers! The first two papers are published at 
+[ELM](https://journals.linguisticsociety.org/proceedings/index.php/ELM/article/view/5813) 
 and [GenBench](https://aclanthology.org/2024.genbench-1.9/) respectively; the third is submitted to SCiL 2025. 
 In the meantime, you can view it on [arXiv](https://arxiv.org/abs/2503.24293).
 
